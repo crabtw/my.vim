@@ -7,20 +7,20 @@ syn keyword sail2Keyword else match in return register ref forall operator effec
 syn keyword sail2Keyword overload cast sizeof constraint default assert newtype from
 syn keyword sail2Keyword pure infixl infixr infix scattered end try catch and to
 syn keyword sail2Keyword throw clause as repeat until while do foreach
-syn keyword sail2Keyword mapping
+syn keyword sail2Keyword mapping where with
 
 syn keyword sail2Keyword type struct union enum bitfield nextgroup=sail2Identifier skipwhite skipempty
 syn keyword sail2Keyword val function nextgroup=sail2FuncName skipwhite skipempty
 
-syn keyword sail2Kind Int Type Order inc dec
+syn keyword sail2Kind Int Type Order Bool inc dec
 syn keyword sail2Kind barr depend rreg wreg rmem rmemt wmv wmvt eamem wmem
-syn keyword sail2Kind exmem undef unspec nondet escape
+syn keyword sail2Kind exmem undef unspec nondet escape configuration
 
 syn keyword sail2Type vector int nat atom range unit bit real list bool string bits option
 syn keyword sail2Type uint64_t int64_t bv_t mpz_t
 
-syn match   sail2PreProc "^\s*\$\%(define\|include\|ifdef\|ifndef\|else\|endif\)\>"
-syn keyword sail2Special _prove create kill convert undefined
+syn match   sail2PreProc "^\s*\$\%(define\|include\|ifdef\|ifndef\|else\|endif\|option\|latex\)\>"
+syn keyword sail2Special _prove _not_prove create kill convert undefined
 
 syn match sail2Identifier "[a-zA-Z_][a-zA-Z0-9_']*" display contained
 
@@ -70,5 +70,6 @@ hi def link sail2CommentLine          Comment
 hi def link sail2CommentBlock         Comment
 hi def link sail2CommentBlockDoc      SpecialComment
 hi def link sail2CommentBlockDocError Error
+hi def link sail2Todo                 Todo
 
 let b:current_syntax = "sail2"
